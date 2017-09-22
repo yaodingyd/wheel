@@ -1,0 +1,19 @@
+{
+  "name": "wheel-mvvm",
+  "version": "0.0.1",
+  "main": "dist/wheel-mvvm.cjs.js",
+  "module": "dist/wheel-mvvm.esm.js",
+  "browser": "dist/wheel-mvvm.umd.js",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  }
+}
