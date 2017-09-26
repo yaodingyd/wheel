@@ -5,10 +5,10 @@
 * @author yding
 */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.wheel = factory());
-}(this, (function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.wheel = {})));
+}(this, (function (exports) { 'use strict';
 
 var uid = 0;
 // "target" is the current watcher being evaluated.
@@ -48,7 +48,7 @@ var Dep = (function () {
 }());
 Dep.target = null;
 
-var Observer$1 = (function () {
+var Observer = (function () {
     function Observer(value) {
         this.value = value;
         this.dep = new Dep();
@@ -110,7 +110,7 @@ function observe(val) {
         return;
     }
     var ob;
-    ob = new Observer$1(val);
+    ob = new Observer(val);
     return ob;
 }
 
@@ -171,7 +171,10 @@ function parseGetter(exp) {
     };
 }
 
-return Observer$1;
+exports.Observer = Observer;
+exports.Watcher = Watcher;
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 //# sourceMappingURL=wheel-mvvm.umd.js.map

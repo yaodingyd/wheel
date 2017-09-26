@@ -42,7 +42,7 @@ var Dep = (function () {
 }());
 Dep.target = null;
 
-var Observer$1 = (function () {
+var Observer = (function () {
     function Observer(value) {
         this.value = value;
         this.dep = new Dep();
@@ -104,7 +104,7 @@ function observe(val) {
         return;
     }
     var ob;
-    ob = new Observer$1(val);
+    ob = new Observer(val);
     return ob;
 }
 
@@ -165,4 +165,4 @@ function parseGetter(exp) {
     };
 }
 
-export default Observer$1;
+export { Observer, Watcher };

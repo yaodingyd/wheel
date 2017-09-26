@@ -1,6 +1,6 @@
 {
   "name": "wheel-mvvm",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/wheel-mvvm.cjs.js",
   "module": "dist/wheel-mvvm.esm.js",
   "browser": "dist/wheel-mvvm.umd.js",

@@ -1,5 +1,4 @@
-import { Observer } from './observer'
+import Observer from './observer'
+import Watcher from './watcher'
 
-export default Observer
-
-
+export { Observer, Watcher }

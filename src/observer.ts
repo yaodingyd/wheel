@@ -37,7 +37,8 @@ function defineReactive (obj: Object, key: string, val: any) {
       const value = getter ? getter.call(obj) : val
       console.log('depends trigger')
       if (Dep.target) {
-        //TODO: why not obj.dep.depend()
+        // each property needs one dep
+        // ob.dep is used for childOb
         dep.depend()
         if (childOb) {
           childOb.dep.depend()

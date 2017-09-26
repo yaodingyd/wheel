@@ -6,6 +6,8 @@
 */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var uid = 0;
 // "target" is the current watcher being evaluated.
 // this is globally unique because there could be only one
@@ -44,7 +46,7 @@ var Dep = (function () {
 }());
 Dep.target = null;
 
-var Observer$1 = (function () {
+var Observer = (function () {
     function Observer(value) {
         this.value = value;
         this.dep = new Dep();
@@ -106,7 +108,7 @@ function observe(val) {
         return;
     }
     var ob;
-    ob = new Observer$1(val);
+    ob = new Observer(val);
     return ob;
 }
 
@@ -167,4 +169,5 @@ function parseGetter(exp) {
     };
 }
 
-module.exports = Observer$1;
+exports.Observer = Observer;
+exports.Watcher = Watcher;
