@@ -17,3 +17,5 @@ There are two other modules used with Observer: `Dep` and `Watcher`. Dep is a de
 A general workflow is like this:
 
 A new Observer is instantiated upon a component(or a POJO) -> walk through all properties to convert to getter/setter -> a new Watcher is instantiated on one of the property -> Watcher is being evaluated, tries to get initial value -> Watcher is set to be current Dep target -> Observer's getter is called -> Dep.target exists, try to add dependency -> Observer's dep adds this watcher, watcher's dep container adds this Observer's dep -> remmove Dep.target as current Watcher evaluation is done
+
+2. Vue's virtual DOM implementation (Snabbdom)
